@@ -5,9 +5,9 @@ to use it.
 
 ## What it does
 
-- Lists all installed plugins, keymaps, and commands in a single Telescope picker
-- Preview with keymap details, plugin attribution, and help docs
-- Press `<CR>` on a keymap to execute it, on a command to run it, or browse and close with `<Esc>`
+- **Zero config**: auto-discovers everything from lazy.nvim and the Neovim runtime, no registration step required
+- **Inline help docs**: preview pane shows the plugin's vimdoc help alongside keymap/command details
+- **Quick action**: Press `<CR>` on a keymap to execute it, on a command to run it, or browse and close with `<Esc>`
 
 ## Requirements
 
