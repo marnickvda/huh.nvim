@@ -1,0 +1,70 @@
+*huh.txt*  Fuzzy search plugins, keymaps, and commands
+
+Author: Marnick van der Arend
+License: MIT
+
+==============================================================================
+INTRODUCTION                                                      *huh.nvim*
+
+huh.nvim provides a unified Telescope picker for fuzzy searching all your
+installed plugins, keymaps, and commands. Press `<leader>huh` when you forget
+what you installed or how to use it.
+
+==============================================================================
+REQUIREMENTS                                              *huh-requirements*
+
+- Neovim >= 0.10
+- telescope.nvim (https://github.com/nvim-telescope/telescope.nvim)
+- lazy.nvim (https://github.com/folke/lazy.nvim)
+
+Run `:checkhealth huh` to verify your setup.
+
+==============================================================================
+SETUP                                                          *huh-setup*
+
+Using lazy.nvim: >lua
+  {
+    "marnickvda/huh.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim" },
+    keys = {
+      { "<leader>huh", function() require("huh").pick() end,
+        desc = "huh: fuzzy search plugins, keymaps & commands" },
+    },
+    config = function()
+      require("huh").setup()
+    end,
+  }
+<
+
+==============================================================================
+USAGE                                                          *huh-usage*
+
+                                                              *huh.pick()*
+`require("huh").pick()`
+  Open the huh picker. Shows all plugins, keymaps, and commands in a single
+  searchable list.
+
+  Results are grouped: plugins first, then commands, then keymaps.
+
+  Pressing `<CR>` on:
+  - A keymap: executes the keymap
+  - A command with no args: runs the command
+  - A command with args: opens the command line pre-filled
+  - A plugin: closes the picker
+
+  The preview pane shows details and help docs when available.
+
+SEARCHING                                                  *huh-searching*
+
+  The fuzzy search matches against the entry display text, plugin name,
+  and for keymaps, the resolved leader key. This means typing a literal
+  space followed by `ff` will match `<leader>ff` when your leader is space.
+
+==============================================================================
+HEALTH CHECK                                                  *huh-health*
+
+Run `:checkhealth huh` to verify that all dependencies are installed and
+your Neovim version meets the minimum requirement.
+
+==============================================================================
+ vim:tw=78:ts=8:ft=help:norl:
