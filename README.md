@@ -3,6 +3,8 @@
 Fuzzy search your Neovim plugins, keymaps, and commands. Press `<leader>huh` when you forget what you installed or how
 to use it.
 
+![preview](preview.png)
+
 ## What it does
 
 - **Zero config**: auto-discovers everything from lazy.nvim and the Neovim runtime, no registration step required
